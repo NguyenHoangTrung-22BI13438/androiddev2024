@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@android:color/holo_blue_light"
+        android:background="@android:color/holo_red_light"
         android:padding="15dp">
 
         <TextView
@@ -32,7 +32,9 @@
         android:orientation="horizontal"
         android:paddingVertical="10dp"
         android:paddingHorizontal="16dp"
-        android:background="@android:color/white">
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
             android:id="@+id/dayTextView1"
@@ -59,7 +61,9 @@
         android:orientation="horizontal"
         android:paddingVertical="10dp"
         android:paddingHorizontal="16dp"
-        android:background="@android:color/white">
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
             android:id="@+id/dayTextView2"
