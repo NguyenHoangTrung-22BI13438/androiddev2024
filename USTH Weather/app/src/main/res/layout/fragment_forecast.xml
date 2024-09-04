@@ -1,20 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:background="@android:color/white"
     tools:context=".ForecastFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
+    <!-- Header Layout -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="106dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Try finger but hole"
-        android:textColor="@android:color/white"
-        android:textSize="24sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_blue_light"
+        android:padding="15dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- First Forecast Item (Monday) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/dayTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monday"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/weatherIcon1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/cloudy_partly_rain2"
+            android:contentDescription="@string/monday" />
+    </LinearLayout>
+
+    <!-- Second Forecast Item (Tuesday) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/dayTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tuesday"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/weatherIcon2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/night_thunderstorm1"
+            android:contentDescription="@string/tuesday" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -26,7 +26,6 @@ public class WeatherActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Dynamically add ForecastFragment to the activity
         ForecastFragment firstFragment = new ForecastFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.container, firstFragment);
