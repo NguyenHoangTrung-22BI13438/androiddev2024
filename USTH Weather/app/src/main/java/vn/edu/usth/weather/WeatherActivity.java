@@ -26,11 +26,19 @@ public class WeatherActivity extends AppCompatActivity {
             return insets;
         });
 
-        ForecastFragment firstFragment = new ForecastFragment();
+        // Add WeatherFragment to weather_container
+        WeatherFragment weatherFragment = new WeatherFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.container, firstFragment);
+        transaction.add(R.id.weather_container, weatherFragment);
+        transaction.commit();
+
+        // Add ForecastFragment to container
+        ForecastFragment forecastFragment = new ForecastFragment();
+        transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.container, forecastFragment);
         transaction.commit();
     }
+
 
     @Override
     protected void onStart() {

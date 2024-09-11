@@ -8,24 +8,6 @@
     android:background="@android:color/white"
     tools:context=".ForecastFragment">
 
-    <!-- Header Layout -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@android:color/holo_red_light"
-        android:padding="15dp">
-
-        <TextView
-            android:id="@+id/headerTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/header"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <!-- First Forecast Item (Monday) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +36,11 @@
             android:contentDescription="@string/monday" />
     </LinearLayout>
 
-    <!-- Second Forecast Item (Tuesday) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
