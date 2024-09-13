@@ -7,7 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -26,19 +29,20 @@ public class WeatherActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Add WeatherFragment to weather_container
-        WeatherFragment weatherFragment = new WeatherFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.weather_container, weatherFragment);
-        transaction.commit();
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return new WeatherAndForecastFragment();
+            }
 
-        // Add ForecastFragment to container
-        ForecastFragment forecastFragment = new ForecastFragment();
-        transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.container, forecastFragment);
-        transaction.commit();
+            @Override
+            public int getCount() {
+                return 3;
+            }
+        };
+        viewPager.setAdapter(adapter);
     }
-
 
     @Override
     protected void onStart() {
