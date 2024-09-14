@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@android:color/holo_purple"
-        android:padding="15dp"
+        android:background="@color/header_background"
+        android:padding="@dimen/header_padding"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -24,8 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/header"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textColor="@color/header_text_color"
+            android:textSize="@dimen/header_text_size" />
     </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager

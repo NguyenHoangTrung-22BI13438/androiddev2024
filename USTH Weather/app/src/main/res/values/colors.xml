@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="header_background">#AA66CC</color> <!-- Replace with actual color value for holo_purple -->
+    <color name="header_text_color">#FFFFFF</color>
 </resources>
