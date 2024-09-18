@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nguyen Hoang Trung
 * ID: 22BI13438
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Group ID: *16*
+* Project Name: *Recipe Nutrition App*
