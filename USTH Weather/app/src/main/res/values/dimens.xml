@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="container_height">0dp</dimen>
-    <dimen name="container_weight">1</dimen>
-    <dimen name="header_padding">15dp</dimen>
-    <dimen name="header_text_size">18sp</dimen>
+    <dimen name="margin_end_48">48dp</dimen>
+    <dimen name="padding_bottom_30">30dp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="margin_start_16">16dp</dimen>
+    <dimen name="margin_top_16">16dp</dimen>
+    <dimen name="margin_end_16">16dp</dimen>
+    <dimen name="margin_bottom_16">16dp</dimen>
+    <dimen name="image_weather_size">120dp</dimen>
+    <dimen name="actionBarSize">56dp</dimen>
 </resources>
