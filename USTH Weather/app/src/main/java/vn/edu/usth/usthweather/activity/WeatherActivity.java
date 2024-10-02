@@ -1,11 +1,11 @@
 package vn.edu.usth.usthweather.activity;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
-import android.graphics.Bitmap;
+
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -47,34 +47,38 @@ public class WeatherActivity extends AppCompatActivity {
         MediaPlayer mMediaPlayer = MediaPlayer.create(this, R.raw.cardigan);
         mMediaPlayer.start();
         initToolBar();
-        //requestNetwork();
-        requestNetworkByAsyncTask();
+        requestNetwork();
+        //requestNetworkByAsyncTask();
     }
 
-    private void requestNetworkByAsyncTask() {
-        @SuppressLint("StaticFieldLeak")
-        AsyncTask<String, Integer, Bitmap> task = new AsyncTask<String, Integer, Bitmap>() {
 
+
+    private void requestNetwork() {
+        final Handler handler = new Handler(Looper.getMainLooper()) {
             @Override
-            protected Bitmap doInBackground(String... strings) {
+            public void handleMessage(@NonNull Message msg) {
+                String content = msg.getData().getString(NETWORK_RESPONSE_KEY);
+                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                return null;
+                Bundle mBundle = new Bundle();
+                mBundle.putString(NETWORK_RESPONSE_KEY, "Request Network....");
+                Message msg = new Message();
+                msg.setData(mBundle);
+                handler.sendMessage(msg);
             }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                Toast.makeText(getApplicationContext(),
-                        "Request Network....", Toast.LENGTH_SHORT).show();
-            }
-        };
-        task.execute();
+        });
+        thread.start();
     }
-
-
 
     private void initToolBar() {
         Toolbar toolbar = findViewById(R.id.weather_toolbar);
