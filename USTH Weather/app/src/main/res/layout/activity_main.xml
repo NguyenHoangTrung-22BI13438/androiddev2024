@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@color/purple_500"
         android:minHeight="@dimen/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <com.google.android.material.tabs.TabLayout
         app:tabSelectedTextAppearance="@style/TextAppearance.Material3.TitleMedium"

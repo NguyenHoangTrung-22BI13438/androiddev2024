@@ -3,6 +3,7 @@ package vn.edu.usth.usthweather.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -73,37 +74,13 @@ public class WeatherActivity extends AppCompatActivity {
         task.execute();
     }
 
-    private void requestNetwork() {
-        final Handler handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(@NonNull Message msg) {
-                String content = msg.getData().getString(NETWORK_RESPONSE_KEY);
-                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
-            }
-        };
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Bundle mBundle = new Bundle();
-                mBundle.putString(NETWORK_RESPONSE_KEY, "Request Network....");
-                Message msg = new Message();
-                msg.setData(mBundle);
-                handler.sendMessage(msg);
-            }
-        });
-        thread.start();
-    }
 
     private void initToolBar() {
         Toolbar toolbar = findViewById(R.id.weather_toolbar);
         toolbar.inflateMenu(R.menu.weather_menu);
         toolbar.setTitle(R.string.app_name);
+        toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setOnMenuItemClickListener(item -> {
             int itemMenuId = item.getItemId();
             if (itemMenuId == R.id.ic_refresh) {
